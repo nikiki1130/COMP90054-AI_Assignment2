@@ -16,6 +16,11 @@ import game
 from util import nearestPoint
 import os
 
+################
+#  BinPath     #
+################
+
+bin_path = "../../bin"
 
 #################
 # Team creation #
@@ -100,8 +105,8 @@ class ReflexCaptureAgent(CaptureAgent):
 
   def runPlanner( self ):
 	cd = os.path.dirname(os.path.abspath(__file__))
-	os.system("%s/ff  -o %s/domain.pddl -f %s/problem%d.pddl > %s/solution%d.txt"
-                %(cd,cd,cd,self.index,cd,self.index) );
+	os.system("%s/%s/ff  -o %s/domain.pddl -f %s/problem%d.pddl > %s/solution%d.txt"
+                %(cd,bin_path,cd,cd,self.index,cd,self.index) );
 
   def parseSolution( self ):
     cd = os.path.dirname(os.path.abspath(__file__))
